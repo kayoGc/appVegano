@@ -12,6 +12,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     List<Filmes> listaFilmes;
     RecyclerView idRecylerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +22,44 @@ public class MainActivity extends AppCompatActivity {
 
         listaFilmes = new ArrayList<>();
 
+        // adicionando os items ao array - filme para a lista
+        listaFilmes.add(
+                new Filmes("Rei da montanha",
+                        "legal",
+                        "Aventura",
+                        R.drawable.rei_montanha)
+        );
+        listaFilmes.add(
+                new Filmes("Apocalipse",
+                        "Filme legal",
+                        "Medo",
+                        R.drawable.apocalipe)
+        );
+        listaFilmes.add(
+                new Filmes("Rei da montanha",
+                        "Filme muito legal",
+                        "Aventura",
+                        R.drawable.rei_montanha)
+        );
+        listaFilmes.add(
+                new Filmes("Rei da montanha",
+                        "Filme muito legal",
+                        "Aventura",
+                        R.drawable.rei_montanha)
+        );
+        listaFilmes.add(
+                new Filmes("Rei da montanha",
+                        "Filme muito legal",
+                        "Aventura",
+                        R.drawable.rei_montanha)
+        );
+
+
         // criando a classe adaptadora e passando os parâmetros
         MyAdapter adapter = new MyAdapter(getApplicationContext(), listaFilmes);
 
         // tipo de layout que a lista irá seguir
-        idRecylerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2);
+        idRecylerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
 
         // fixador de tamanho da lista - deixar lista mais rápida
         idRecylerView.setHasFixedSize(true);
