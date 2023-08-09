@@ -1,6 +1,7 @@
 package br.com.etecia.appvegano;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,7 +12,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
- // extemde primerio com o RecyclerView.Apadter
+
+// extemde primerio com o RecyclerView.Apadter
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     // da alt + enter se tiver vermelho
@@ -19,11 +21,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private List<Filmes> lstFilmes;
 
-     @NonNull
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view;
 
-        return null;
+        LayoutInflater inflater = LayoutInflater.from(mContexto);
+        view = inflater.inflate(R.layout.modelo_filmes, parent, false);
+
+        return new ViewHolder(view);
     }
 
     @Override
