@@ -34,11 +34,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.idTitutloFilmes.setText(lstFilmes.get(position).getTitulo());
+        holder.idIagemFilmes.setImageResource(lstFilmes.get(position).getImagem());
     }
 
     @Override
     public int getItemCount() {
+
         return 0;
     }
 
